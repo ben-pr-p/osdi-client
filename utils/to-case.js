@@ -10,8 +10,11 @@ const stringModifiers = {
     , str),
   title: title,
   method: str =>
-    'get' + title(str)
-
+    'get' + title(str),
+  snake: str =>
+    (str.match(/.[A-Z]/) || []).reduce((acc, curr) =>
+      acc.replace(curr, curr.charAt(0) + '_' + curr.charAt(1).toLowerCase())
+    , str)
 }
 
 const toCaseObj = stringFn => obj => {
@@ -20,7 +23,7 @@ const toCaseObj = stringFn => obj => {
 
   const result = {}
   for (let key in obj)
-    result[stringFn(key)] = toCaseObj(obj[key])
+    result[stringFn(key)] = toCaseObj(stringFn)(obj[key])
 
   return result
 }
@@ -37,5 +40,9 @@ module.exports = {
   title: {
     str: stringModifiers.title,
     obj: toCaseObj(stringModifiers.title)
+  },
+  snake: {
+    str: stringModifiers.snake,
+    obj: toCaseObj(stringModifiers.snake)
   }
 }

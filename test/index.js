@@ -66,7 +66,7 @@ describe('constructor', () => {
   })
 })
 
-describe('GET people', () => {
+describe('getPeople', () => {
   const scope = nock(testBase)
     .get('/people')
     .reply(200, samplePeople)
@@ -126,6 +126,105 @@ describe('client.parse', () => {
       const res2 = client.parse(raw)
       expect(res2.page).to.equal(2)
       expect(res2.prevPage).to.be.a('function')
+      done()
+    })
+    .catch(err => done(err))
+  })
+})
+
+const personKeys = [
+  'data', '_links', '_updatedFields'
+]
+
+describe('person resource', () => {
+  let client
+  let people
+  let person
+  const newName = 'jabis'
+
+  before(done => {
+    scope = nock(testBase)
+      .get('/people')
+      .reply(200, samplePeople)
+
+    osdi.client(sampleAep).then(cli => {
+      client = cli
+
+      client.getPeople()
+      .then(raw => {
+        const res = client.parse(raw)
+        people = res.people
+        done()
+      })
+    })
+  })
+
+  it('people should be an array of proper Person resources', done => {
+    people.forEach(p => {
+      expect(p).to.contain.all.keys(personKeys)
+      expect(p.delete).to.be.a('function')
+      expect(p.save).to.be.a('function')
+      person = p
+    })
+
+    done()
+  })
+
+  it('Person should have getters and setters', done => {
+    expect(person.familyName()).to.be.a('string')
+    person.familyName(newName)
+    expect(person.familyName()).to.equal(newName)
+
+    done()
+  })
+
+  it('setting and attr should add to updated fields', done => {
+    expect(person._updatedFields).to.deep.equal(['familyName'])
+    done()
+  })
+
+  it('expect Person.save to be a put with the proper body', done => {
+    const scope3 = nock(testBase)
+      .put('/people/1efc3644-af25-4253-90b8-a0baf12dbd1e', {
+        family_name: newName
+      })
+      .reply(200)
+
+    person.save()
+    .then(res => {
+      expect(res.status).to.equal(200)
+      done()
+    })
+    .catch(err => done(err))
+  })
+
+  it('should be able to create a new person', done => {
+    const scope4 = nock(testBase)
+      .post('/people', {
+        familyName: 'Jamie'
+      })
+      .reply(200)
+
+    const p = new client.resources.Person({
+      familyName: 'Jamie'
+    })
+
+    p.save()
+    .then(res => {
+      expect(res.status).to.equal(200)
+      done()
+    })
+    .catch(err => done(err))
+  })
+
+  it('should send a delete request on Person.delete', done => {
+    const scope5 = nock(testBase)
+      .delete('/people/1efc3644-af25-4253-90b8-a0baf12dbd1e')
+      .reply(200)
+
+    person.delete()
+    .then(res => {
+      expect(res.status).to.equal(200)
       done()
     })
     .catch(err => done(err))
