@@ -180,3 +180,7 @@ person.save().then(/* stuff */)
 person.givenName('Thomas')
 person.save().then(/* stuff */)
 ```
+
+## Tests
+
+Written with Mocha, Chai, and node-nock. `npm test` does the trick.
