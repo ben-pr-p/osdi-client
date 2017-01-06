@@ -5,6 +5,9 @@ Library for interacting with any OSDI compliant server (http://opensupporter.git
 Will parse the app entry point and returned metadata on subsequent api calls
 and create convenience methods for you.
 
+Note: I haven't finished populating the Resource classes with the correct property
+fields.
+
 ## Usage
 
 Works in the browser and in node. Browersify / webpack friendly.
