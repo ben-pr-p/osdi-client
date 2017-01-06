@@ -1,8 +1,16 @@
 # OSDI Client
 
+Library for interacting with any OSDI compliant server (http://opensupporter.github.io/osdi-docs/).
+
+Will parse the app entry point and returned metadata on subsequent api calls
+and create convenience methods for you.
+
 ## Usage
 
 Works in the browser and in node. Browersify / webpack friendly.
+
+Relies on `superagent` (https://github.com/visionmedia/superagent) for most of
+the heavy lifting, so get familiar with their API first.
 
 ### osdi.client
 
