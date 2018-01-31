@@ -12,6 +12,20 @@ fields.
 
 Works in the browser and in node. Browersify / webpack friendly.
 
+```
+npm install --save osdi-client
+```
+
+```
+const osdi = require('osdi-client')
+osdiClient.client('https://sample-system.com/api/aep')
+  .then(client => {
+    // ready to use client
+  })
+  .catch(err => {
+  })
+```
+
 Relies on `superagent` (https://github.com/visionmedia/superagent) for most of
 the heavy lifting, so get familiar with their API first.
 
@@ -78,6 +92,14 @@ client.getPeople()
 .catch(err => {
   // handle error
 })
+```
+
+And since `superagent` supporters promises, you can do
+```
+async myFunc () {
+  const people = await client.getPeople()
+  // do something with people
+}
 ```
 
 Since the `get<Resource>` methods return a `superagent` request, you can manually
