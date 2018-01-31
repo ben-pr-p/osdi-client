@@ -1,6 +1,6 @@
 {
   "name": "osdi-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Superagent based client library for interacting with any OSDI compliant server",
   "main": "index.js",
   "scripts": {
