@@ -1,75 +1,75 @@
 {
-    "motd": "Welcome to the OSDI API Entry Point!",
-    "vendor_name" : "Foobar Incorporated",
-    "product_name" : "Curly Braces OSDI Server",
-  	"osdi_version" : "1.0",
-    "max_pagesize": 25,
-    "namespace": "osdi_sample_system",
-    "_links": {
-        "curies": [
-            {
-                "name": "osdi",
-                "href": "https://osdi-sample-system.org/docs/v1/{rel}",
-                "templated": true
-            }
-        ],
-        "self": {
-            "href": "https://osdi-sample-system.org/api/v1/",
-            "title": "This API entry point"
-        },
-        "osdi:people": {
-            "href": "https://osdi-sample-system.org/api/v1/people",
-            "title": "The collection of people in the system"
-        },
-        "osdi:petitions": {
-            "href": "https://osdi-sample-system.org/api/v1/petitions",
-            "title": "The collection of petitions in the system"
-        },
-        "osdi:events": {
-            "href": "https://osdi-sample-system.org/api/v1/events",
-            "title": "The collection of events in the system"
-        },
-        "osdi:forms": {
-            "href": "https://osdi-sample-system.org/api/v1/forms",
-            "title": "The collection of forms in the system"
-        },
-        "osdi:fundraising_pages": {
-            "href": "https://osdi-sample-system.org/api/v1/fundraising_pages",
-            "title": "The collection of fundraising_pages in the system"
-        },
-        "osdi:donations": {
-            "href": "https://osdi-sample-system.org/api/v1/donations",
-            "title": "The collection of donations in the system"
-        },
-        "osdi:tags": {
-            "href": "https://osdi-sample-system.org/api/v1/tags",
-            "title": "The collection of tags in the system"
-        },
-        "osdi:lists": {
-            "href": "https://osdi-sample-system.org/api/v1/lists",
-            "title": "The collection of lists in the system"
-        },
-        "osdi:queries": {
-            "href": "https://osdi-sample-system.org/api/v1/queries",
-            "title": "The collection of queries in the system"
-        },
-        "osdi:questions": {
-            "href": "https://osdi-sample-system.org/api/v1/questions",
-            "title": "The collection of questions in the system"
-        },
-        "osdi:share_pages": {
-            "href": "https://osdi-sample-system.org/api/v1/share_pages",
-            "title": "The collection of share pages in the system"
-        },
-        "docs": {
-            "href": "https://osdi-sample-system.org/docs/v1/",
-            "title": "Documentation",
-            "name": "Docs",
-            "index": "index"
-        },
-        "osdi:person_signup_helper": {
-            "href": "https://osdi-sample-system.org/api/v1/people/person_signup",
-            "title": "The person signup helper for the system"
-        }
+  "motd": "Welcome to the OSDI API Entry Point!",
+  "vendor_name": "Foobar Incorporated",
+  "product_name": "Curly Braces OSDI Server",
+  "osdi_version": "1.0",
+  "max_pagesize": 25,
+  "namespace": "osdi_sample_system",
+  "_links": {
+    "curies": [
+      {
+        "name": "osdi",
+        "href": "https://osdi-sample-system.org/docs/v1/{rel}",
+        "templated": true
+      }
+    ],
+    "self": {
+      "href": "https://osdi-sample-system.org/api/v1/",
+      "title": "This API entry point"
+    },
+    "osdi:people": {
+      "href": "https://osdi-sample-system.org/api/v1/people",
+      "title": "The collection of people in the system"
+    },
+    "osdi:petitions": {
+      "href": "https://osdi-sample-system.org/api/v1/petitions",
+      "title": "The collection of petitions in the system"
+    },
+    "osdi:events": {
+      "href": "https://osdi-sample-system.org/api/v1/events",
+      "title": "The collection of events in the system"
+    },
+    "osdi:forms": {
+      "href": "https://osdi-sample-system.org/api/v1/forms",
+      "title": "The collection of forms in the system"
+    },
+    "osdi:fundraising_pages": {
+      "href": "https://osdi-sample-system.org/api/v1/fundraising_pages",
+      "title": "The collection of fundraising_pages in the system"
+    },
+    "osdi:donations": {
+      "href": "https://osdi-sample-system.org/api/v1/donations",
+      "title": "The collection of donations in the system"
+    },
+    "osdi:tags": {
+      "href": "https://osdi-sample-system.org/api/v1/tags",
+      "title": "The collection of tags in the system"
+    },
+    "osdi:lists": {
+      "href": "https://osdi-sample-system.org/api/v1/lists",
+      "title": "The collection of lists in the system"
+    },
+    "osdi:queries": {
+      "href": "https://osdi-sample-system.org/api/v1/queries",
+      "title": "The collection of queries in the system"
+    },
+    "osdi:questions": {
+      "href": "https://osdi-sample-system.org/api/v1/questions",
+      "title": "The collection of questions in the system"
+    },
+    "osdi:share_pages": {
+      "href": "https://osdi-sample-system.org/api/v1/share_pages",
+      "title": "The collection of share pages in the system"
+    },
+    "docs": {
+      "href": "https://osdi-sample-system.org/docs/v1/",
+      "title": "Documentation",
+      "name": "Docs",
+      "index": "index"
+    },
+    "osdi:person_signup_helper": {
+      "href": "https://osdi-sample-system.org/api/v1/people/person_signup",
+      "title": "The person signup helper for the system"
     }
+  }
 }
